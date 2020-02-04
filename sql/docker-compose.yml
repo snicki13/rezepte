@@ -15,7 +15,7 @@ services:
     networks:
       - postgres
     restart: unless-stopped
-  
+
   pgadmin:
     container_name: pgadmin_container
     image: dpage/pgadmin4
@@ -23,7 +23,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-mail@dkroell.de}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-Maerklin1!}
     volumes:
-       - pgadmin:/root/.pgadmin
+       - pgadmin:/var/lib/pgadmin
     ports:
       - "${PGADMIN_PORT:-5050}:80"
     networks:

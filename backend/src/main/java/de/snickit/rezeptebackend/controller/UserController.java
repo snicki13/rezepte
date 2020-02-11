@@ -1,8 +1,7 @@
 package de.snickit.rezeptebackend.controller;
 
 import de.snickit.rezeptebackend.entities.User;
-import de.snickit.rezeptebackend.entities.UserRepo;
-import org.springframework.beans.factory.annotation.Autowired;
+import de.snickit.rezeptebackend.entities.repositories.UserRepo;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 

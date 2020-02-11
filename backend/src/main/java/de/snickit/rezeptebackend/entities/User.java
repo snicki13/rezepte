@@ -4,6 +4,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "user", schema = "public")
@@ -35,6 +37,9 @@ public class User implements Serializable {
 
     @Column
     private Timestamp creationTime;
+
+    @OneToMany(mappedBy="user")
+    Set<Recipe> userRecipes = new HashSet<>();
 
     public Long getId() {
         return id;

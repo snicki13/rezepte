@@ -1,20 +1,22 @@
 package de.snickit.rezeptebackend.entities;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Collection;
 
 @Entity
-@Table
+@Table(name = "recipe", schema = "public")
 public class Recipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long recipeId;
 
     @ManyToOne
     private User user;
 
-    @OneToMany(mappedBy="recipe")
-    Set<RecipeStep> recipeSteps = new HashSet<>();
+    @OneToMany(mappedBy="recipeId")
+    private Collection<RecipeStep> recipeSteps;
+
+    @ManyToMany(mappedBy="recipes")
+    private Collection<Category> categories;
 }

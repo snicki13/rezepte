@@ -4,7 +4,6 @@ import de.snickit.rezeptebackend.entities.pk.RecipeStepKey;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.Set;
 
 @Entity
 @Table(name = "recipe_step", schema = "public")
@@ -18,14 +17,14 @@ public class RecipeStep {
     @Id
     private Long stepId;
 
-    @ManyToMany(mappedBy = "recipeSteps")
-    private Collection<Ingredient> ingredients;
+    @OneToMany(mappedBy = "recipeStep")
+    private Collection<RecipeStepIngredients> ingredients;
 
-    public Collection<Ingredient> getIngredients() {
+    public Collection<RecipeStepIngredients> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(Collection<Ingredient> ingredients) {
+    public void setIngredients(Collection<RecipeStepIngredients> ingredients) {
         this.ingredients = ingredients;
     }
 }

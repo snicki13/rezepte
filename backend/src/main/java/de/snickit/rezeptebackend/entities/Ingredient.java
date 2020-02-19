@@ -1,6 +1,7 @@
 package de.snickit.rezeptebackend.entities;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,12 +13,8 @@ public class Ingredient {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long ingredientId;
 
-    @ManyToMany
-    @JoinTable(
-            name = "recipe_step_ingredients",
-            joinColumns = @JoinColumn(name = "ingredient_id"),
-            inverseJoinColumns = {@JoinColumn(name = "recipe_id"), @JoinColumn(name = "recipe_step_id")})
-    private Set<RecipeStep> recipeSteps = new HashSet<>();
+    @OneToMany
+    private Collection<RecipeStepIngredients> recipeStepIngredients;
 
     public Long getIngredientId() {
         return ingredientId;
@@ -25,13 +22,5 @@ public class Ingredient {
 
     public void setIngredientId(Long ingredientId) {
         this.ingredientId = ingredientId;
-    }
-
-    public Set<RecipeStep> getRecipeSteps() {
-        return recipeSteps;
-    }
-
-    public void setRecipeSteps(Set<RecipeStep> recipeSteps) {
-        this.recipeSteps = recipeSteps;
     }
 }

@@ -17,3 +17,5 @@ CREATE DATABASE rezepte_db
     CONNECTION LIMIT = -1;
 
 GRANT ALL ON DATABASE rezepte_db TO rezepte;
+
+insert into

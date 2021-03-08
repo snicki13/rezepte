@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/recipe-backend/recipe-backend.iml" filepath="$PROJECT_DIR$/recipe-backend/recipe-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recipe-frontend/recipe-frontend.iml" filepath="$PROJECT_DIR$/recipe-frontend/recipe-frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/rezepte.iml" filepath="$PROJECT_DIR$/.idea/rezepte.iml" />
+    </modules>
+  </component>
+</project>

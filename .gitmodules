@@ -1,0 +1,3 @@
+[submodule "recipe-frontend"]
+	path = recipe-frontend
+	url = git@github.com:snicki13/recipe-frontend.git
